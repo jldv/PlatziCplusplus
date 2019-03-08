@@ -7,6 +7,7 @@ Player::Player()
     maxWidth = 15;
     maxHeight = 10;
     alive = true;
+    score = 0;
 }
 
 void Player::CallInput()
@@ -63,6 +64,21 @@ void Player::Move(int vx, int vy)
 
     SetNewPosition(vx,vy);
 
+}
+
+void Player::PrintScore()
+{
+    cout << "Player Score: " << score << endl;
+}
+
+void Player::AddScore(int value)
+{
+    score += value;
+
+    if(score >= 1)
+    {
+        alive = false;
+    }
 }
 
 void Player::SetNewPosition(int NewX, int NewY)

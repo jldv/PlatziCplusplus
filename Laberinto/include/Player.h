@@ -4,6 +4,7 @@
 #include <iostream>
 
 
+
 class Player
 {
     public:
@@ -18,11 +19,17 @@ class Player
         int GetXCord();
         int GetYCord();
 
+        void PrintScore();
+        void AddScore(int value);
+
+
         bool alive;
 
     protected:
         int x;
         int y;
+
+        int score;
 
         int lastX;
         int lastY;

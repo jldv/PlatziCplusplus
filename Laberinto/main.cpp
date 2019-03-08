@@ -20,19 +20,29 @@ int main()
     while(player->alive)
     {
         Map.Draw();
+        player->PrintScore();
         //Calling player input
         player->CallInput();
 
         //Making a prediction if the cell is avaiable
-        if( !Map.TryMovePlayer(player->GetXCord(), player->GetYCord()) )
+
+        int PlayerPrediction = Map.TryMovePlayer(player->GetXCord(), player->GetYCord());
+        if(PlayerPrediction == 1)
         {
             //if not we reset to last position
             player->ResetLastPosition();
+        }
+        else if(PlayerPrediction == 3)
+        {
+            player->AddScore(1);
         }
 
 
     }
 
+    Map.LoadAndDrawEnding();
+    cout << "Final Score: " << endl;
+    player->PrintScore();
     cout << "Thanks for playing my game!" << endl;
 
 

@@ -1,5 +1,6 @@
 #ifndef GAMEMAP_H
 #define GAMEMAP_H
+
 #include "MapCell.h"
 
 
@@ -11,14 +12,19 @@ class GameMap
         GameMap();
         virtual ~GameMap();
 
+        void LoadAndDrawIntro();
+        void LoadAndDrawEnding();
+
         void Draw();
 
-        bool TryMovePlayer(int NewX, int NewY);
+        int TryMovePlayer(int NewX, int NewY);
 
 
 
     protected:
         MapCell MapData[15][10];
+
+        void LoadMapFromFile();
 
 
         void SetPlayerCell(int x, int y);

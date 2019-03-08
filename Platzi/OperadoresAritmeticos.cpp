@@ -42,7 +42,7 @@ int main()
 
     resultado = base * altura;
 
-    cout << "El area de mi fugra es: " << endl;
+    cout << "El area de mi figura es: " << endl;
     cout << resultado << endl;
 
     //Operador division
